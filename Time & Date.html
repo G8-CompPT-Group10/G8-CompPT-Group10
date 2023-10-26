@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="icon" type="image/png" href="images/Logo Fun Run 2023.png">
+        <link rel="stylesheet" href="Time & Date style.css" type="text/css">
+        <title>Time & Date</title>
+    </head>
+    <body>
+        <div class="container">
+
+            <nav>
+				<a href="index.html"><img src="images/Logo Fun Run 2023.png" class="logo"></a>
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="About.html">ABOUT</a></li>
+					<li><a href="Time & Date.html">TIME & DATE</a></li>
+					<li><a href="Register.html">REGISTER</a></li>
+				</ul>
+			</nav>
+
+            <div class="content">
+                <p>Balingasag Fun Run 2023</p>
+                <h1>Its Gonna <span>Start</span> Soon</h1>
+                <h3>October 30 2023, 7:45 AM PHT</h3>
+                <div class="launch-time">
+                    <div>
+                        <p id="days">00</p>
+                        <span>Days</span>
+                    </div>
+                    <div>
+                        <p id="hours">00</p>
+                        <span>Hours</span>
+                    </div>
+                    <div>
+                        <p id="minutes">00</p>
+                        <span>Minutes</span>
+                    </div>
+                    <div>
+                        <p id="seconds">00</p>
+                        <span>Seconds</span>
+                    </div>
+                </div>
+                <button type="button" onclick="location.href='Register.html'">Register <img src="images/triangle.png"></button>
+            </div>
+            <img src="images/jumping.png" class="rocket">
+        </div>
+
+        <script>
+            var countDownDate = new Date("October 30, 2023 07:45:00").getTime();
+            var x = setInterval(function(){
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+
+            },1000);
+
+
+        </script>
+        
+    </body>
+</html>
